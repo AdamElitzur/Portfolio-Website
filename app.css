@@ -127,10 +127,29 @@ body {
 .nav-element {
   padding: 0 1rem;
 }
+
 .nav-element a {
   color: var(--clr-header);
   font-size: 1.2rem;
+  background: rgb(0, 194, 255);
+  background: linear-gradient(
+    225deg,
+    rgba(0, 194, 255, 1) 0%,
+    rgba(38, 38, 38, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 0 3px;
+
+  transition: background-size 300ms ease;
 }
+
+.nav-element a:hover {
+  /* color: var(--clr-header-light); */
+
+  background-size: 100% 3px;
+}
+
 .mobile-nav-toggle {
   background: none;
   border: none;
@@ -149,6 +168,14 @@ body {
   padding: 0.5rem 1rem;
   cursor: pointer;
   color: white;
+  transition: 300ms ease;
+}
+.contact-button:hover {
+  background: linear-gradient(
+    225deg,
+    rgba(38, 38, 38, 1) 0%,
+    rgba(0, 194, 255, 1) 100%
+  );
 }
 
 /* main */
