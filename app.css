@@ -1,0 +1,281 @@
+/* Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+ul,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Body */
+:root {
+  --clr-header: hsl(0, 0%, 15%);
+  --clr-header-light: hsl(0, 0%, 44%);
+  --clr-accent: hsl(194, 100%, 50%);
+}
+/* font-family: 'Open Sans', sans-serif; */
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--clr-header);
+}
+.container {
+  --max-width: 1200px;
+  --padding: 1rem;
+  width: min(var(--max-width), 100% - var(--padding) * 2);
+  margin-inline: auto;
+  margin: auto;
+}
+.even-columns {
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* nav */
+.header {
+  padding-top: 1rem;
+}
+.nav-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100vw;
+}
+
+.nav-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  color: var(--clr-header);
+  padding: 0;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.nav-element {
+  padding: 0 1rem;
+}
+.nav-element a {
+  color: var(--clr-header);
+  font-size: 1.2rem;
+}
+.mobile-nav-toggle {
+  background: none;
+  border: none;
+  display: none;
+  /* padding: 0; */
+}
+.contact-button {
+  background: rgb(0, 194, 255);
+  background: linear-gradient(
+    225deg,
+    rgba(0, 194, 255, 1) 0%,
+    rgba(38, 38, 38, 1) 100%
+  );
+  border: none;
+  border-radius: 5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* main */
+.hero {
+  padding: 2rem 0;
+}
+.portrait {
+  /* max-width: 15rem; */
+  width: clamp(1rem, 75%, 20rem);
+  display: inline;
+  margin: auto;
+}
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  /* max-width: 100%; */
+  font-size: 3rem;
+  font-weight: 600;
+}
+.wave-emoji {
+  max-width: 5rem;
+  display: inline;
+  position: relative;
+  top: 1rem;
+}
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--clr-header-light);
+}
+.hero-tools {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  /* flex-direction: row; */
+}
+.hero-tool {
+  width: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-tool-name {
+  margin-top: 1rem;
+}
+
+.projects-title {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.about {
+  margin: 5rem 0;
+}
+/* nav desktop first */
+@media (max-width: 48em) {
+  .mobile-nav-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav {
+    display: none;
+  }
+}
+
+/* Main Media Query */
+@media (min-width: 48em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1.5fr 1fr;
+    gap: 5rem;
+  }
+  .container {
+    padding: 0 3rem;
+  }
+  /* nav */
+  .logo {
+    font-size: 1.2rem;
+  }
+  /* main */
+  .hero {
+    padding: 0;
+    height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+  }
+  .portrait {
+    order: 2;
+    width: 100%;
+  }
+  .title {
+    font-size: 3.3rem;
+  }
+  .subtitle {
+    font-size: 1.25rem;
+  }
+  .hero-tools {
+    margin-top: 3rem;
+    gap: 1rem;
+  }
+  .hero-tool {
+    width: 5rem;
+  }
+}
+/* Larger */
+@media (min-width: 72.5em) {
+  .title {
+    font-size: clamp(4rem, 7vw, 5.2rem);
+  }
+  .subtitle {
+    font-size: 1.6rem;
+  }
+  .hero-tools {
+    margin-top: 3rem;
+    gap: 3rem;
+  }
+  .hero-tool {
+    width: 7rem;
+  }
+  .hero-tool-name {
+    font-size: 1.25rem;
+  }
+}
