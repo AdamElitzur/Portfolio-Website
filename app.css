@@ -83,14 +83,14 @@ select {
   --clr-header-light: hsl(0, 0%, 44%);
   --clr-accent: hsl(194, 100%, 50%);
 }
-/* font-family: 'Open Sans', sans-serif; */
+
 body {
   font-family: "Montserrat", sans-serif;
   color: var(--clr-header);
 }
 .container {
   --max-width: 1200px;
-  --padding: 1rem;
+  --padding: 3rem;
   width: min(var(--max-width), 100% - var(--padding) * 2);
   margin-inline: auto;
   margin: auto;
@@ -116,8 +116,6 @@ body {
 .nav-list {
   list-style-type: none;
   padding: 0;
-  display: flex;
-  align-items: center;
 }
 .logo {
   color: var(--clr-header);
@@ -156,6 +154,9 @@ body {
 /* main */
 .hero {
   padding: 2rem 0;
+  height: clamp(42rem, calc(100vh - 64px), 100rem);
+  display: flex;
+  align-items: center;
 }
 .portrait {
   /* max-width: 15rem; */
@@ -170,7 +171,7 @@ body {
 }
 .title {
   /* max-width: 100%; */
-  font-size: 3rem;
+  font-size: 2.7rem;
   font-weight: 600;
 }
 .wave-emoji {
@@ -180,11 +181,11 @@ body {
   top: 1rem;
 }
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--clr-header-light);
 }
 .hero-tools {
-  margin-top: 1rem;
+  margin-top: 2rem;
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -201,13 +202,35 @@ body {
   margin-top: 1rem;
 }
 
-.projects-title {
+h2 {
   font-size: 2rem;
   font-weight: 800;
+  width: auto;
+  text-align: center;
 }
 
+/* About */
 .about {
   margin: 5rem 0;
+}
+.about-text {
+  margin: 2rem 0;
+  font-family: "Open Sans", sans-serif;
+  color: var(--clr-header-light);
+  text-align: center;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials img {
+  width: 3rem;
+}
+.socials a {
+  padding: 0 0.5rem;
 }
 /* nav desktop first */
 @media (max-width: 48em) {
@@ -219,6 +242,20 @@ body {
   .nav {
     display: none;
   }
+  .nav[data-visible] {
+    display: block;
+    position: fixed;
+    inset: 3rem 5rem;
+  }
+  /* .nav-list {
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: var(--clr-header-light);
+    height: 100%;
+    width: 50%;
+  } */
 }
 
 /* Main Media Query */
@@ -235,10 +272,14 @@ body {
   .logo {
     font-size: 1.2rem;
   }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+  }
   /* main */
   .hero {
     padding: 0;
-    height: calc(100vh - 56px);
     display: flex;
     align-items: center;
   }
