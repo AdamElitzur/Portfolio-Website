@@ -129,7 +129,7 @@ body {
   padding: 0 1rem;
 }
 
-.nav-element a {
+.nav-element-link {
   color: var(--clr-header);
   font-size: 1.2rem;
   background: rgb(0, 194, 255);
@@ -145,8 +145,8 @@ body {
   transition: background-size 300ms ease;
 }
 
-.nav-element a:hover,
-.nav-element a:focus {
+.nav-element-link:hover,
+.nav-element-link:focus {
   /* color: var(--clr-header-light); */
 
   background-size: 100% 3px;
@@ -171,8 +171,11 @@ body {
   border-radius: 5rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  color: white;
+
   z-index: 1;
+}
+.contact-button a {
+  color: white;
 }
 
 .contact-button {
