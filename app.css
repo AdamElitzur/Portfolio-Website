@@ -83,6 +83,9 @@ select {
   --clr-header-light: hsl(0, 0%, 44%);
   --clr-accent: hsl(194, 100%, 50%);
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Montserrat", sans-serif;
