@@ -83,6 +83,9 @@ select {
   --clr-accent: hsl(194, 100%, 50%);
   --clr-accent-muted: hsl(194, 100%, 90%);
   --clr-background: #ffffff;
+  --github-logo: url(/images/icons/github.svg);
+  --external-link: url(/images/icons/external-link.svg);
+  --hamburger: url(/images/icons/menu.svg);
 }
 [data-theme="dark"] {
   --clr-header: hsl(0, 0%, 85%);
@@ -90,6 +93,9 @@ select {
   --clr-accent: hsl(194, 100%, 50%);
   --clr-accent-muted: hsl(194, 100%, 30%);
   --clr-background: #000000;
+  --github-logo: url(/images/icons/github-light.svg);
+  --external-link: url(/images/icons/external-link-light.svg);
+  --hamburger: url(/images/icons/menu-light.svg);
 }
 html {
   scroll-behavior: smooth;
@@ -138,6 +144,13 @@ body {
   font-size: 2rem;
   z-index: 3;
 }
+
+.icon-hamburger {
+  width: 22.68px;
+  height: 21.42px;
+  background: var(--hamburger) center / cover;
+}
+
 .nav-element {
   padding: 0 1rem;
 }
@@ -286,6 +299,7 @@ input:checked + .slider:before {
 }
 
 /* nav desktop first */
+/* the mobile stuff */
 @media (max-width: 50em) {
   .mobile-nav-toggle {
     display: block;
@@ -442,6 +456,22 @@ h2 {
   cursor: pointer;
 }
 
+.github-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  filter: brightness(87%);
+  cursor: pointer;
+  background: var(--github-logo) center / cover;
+
+}
+
+.external-link {
+  width: 2.5rem;
+  height: 2.5rem;
+  filter: brightness(87%);
+  cursor: pointer;
+  background: var(--external-link) center / cover;
+}
 /* About */
 .about {
   margin-bottom: 2rem;
@@ -461,6 +491,11 @@ h2 {
 
 .socials img {
   width: 3rem;
+}
+.socials-github-logo {
+  width: 3rem;
+  height: 3rem;
+
 }
 .socials a {
   padding: 0 0.5rem;
