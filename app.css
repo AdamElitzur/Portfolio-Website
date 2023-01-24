@@ -76,12 +76,20 @@ select {
     scroll-behavior: auto !important;
   }
 }
-
 /* Body */
 :root {
   --clr-header: hsl(0, 0%, 15%);
   --clr-header-light: hsl(0, 0%, 44%);
   --clr-accent: hsl(194, 100%, 50%);
+  --clr-accent-muted: hsl(194, 100%, 90%);
+  --clr-background: #ffffff;
+}
+[data-theme="dark"] {
+  --clr-header: hsl(0, 0%, 85%);
+  --clr-header-light: hsl(0, 0%, 74%);
+  --clr-accent: hsl(194, 100%, 50%);
+  --clr-accent-muted: hsl(194, 100%, 30%);
+  --clr-background: #000000;
 }
 html {
   scroll-behavior: smooth;
@@ -90,6 +98,7 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   color: var(--clr-header);
+  background: var(--clr-background);
 }
 .container {
   --max-width: 1200px;
@@ -180,7 +189,7 @@ body {
   z-index: 1;
 }
 .contact-button a {
-  color: white;
+  color: var(--clr-background);
 }
 
 .contact-button {
@@ -199,6 +208,81 @@ body {
 .contact-button:hover,
 .contact-button:focus {
   background-position: 0 0;
+}
+
+/* nav slider */
+.theme-switch-wrapper {
+  order: 2;
+  display: flex;
+  align-items: center;
+  margin: 0 1vw;
+  /* em {
+    margin-left: 10px;
+    font-size: 1rem;
+  } */
+}
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: var(--clr-accent);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.toggle-icons {
+  display: flex;
+  justify-content: space-between;
+
+  gap: .3rem;
+
+  align-items: center;
+
+  height: 23px;
+  width: 23px;
+  margin: 0 5px;
 }
 
 /* nav desktop first */
@@ -225,7 +309,7 @@ body {
     position: fixed;
     right: 0;
     top: 0;
-    background: hsl(194, 100%, 90%);
+    background: var(--clr-accent-muted);
     /* opacity: 50%; */
     /* border: 5px solid var(--clr-header); */
     height: 100%;
