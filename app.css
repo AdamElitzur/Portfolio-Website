@@ -83,6 +83,7 @@ select {
   --clr-accent: hsl(194, 100%, 50%);
   --clr-accent-muted: hsl(194, 100%, 90%);
   --clr-background: #ffffff;
+  --clr-about: hsl(0, 0%, 85%);
   --github-logo: url(/images/icons/github.svg);
   --external-link: url(/images/icons/external-link.svg);
   --hamburger: url(/images/icons/menu.svg);
@@ -93,6 +94,8 @@ select {
   --clr-accent: hsl(194, 100%, 50%);
   --clr-accent-muted: hsl(194, 100%, 30%);
   --clr-background: hsl(200, 6%, 10%);
+  --clr-about: hsl(0, 0%, 35%);
+
   --github-logo: url(/images/icons/github-light.svg);
   --external-link: url(/images/icons/external-link-light.svg);
   --hamburger: url(/images/icons/menu-light.svg);
@@ -499,13 +502,18 @@ h2 {
 }
 /* About */
 .about {
-  margin-bottom: 2rem;
+  background: var(--clr-about);
+  padding: 2rem 0;
+}
+.about .container {
+  margin-bottom: 0;
 }
 .about-text {
-  margin: 2rem 0;
+  margin: 2rem auto;
+  max-width: 70ch;
   font-family: "Open Sans", sans-serif;
   color: var(--clr-header-light);
-  text-align: center;
+  /* text-align: center; */
 }
 
 .socials {
