@@ -76,6 +76,11 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+*, html {
+
+  scroll-behavior: smooth !important;
+}
 /* Body */
 :root {
   --clr-header: hsl(0, 0%, 15%);
