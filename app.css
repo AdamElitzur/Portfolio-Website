@@ -83,17 +83,7 @@ select {
 }
 /* Body */
 :root {
-  --clr-header: hsl(0, 0%, 15%);
-  --clr-header-light: hsl(0, 0%, 44%);
-  --clr-accent: hsl(194, 100%, 50%);
-  --clr-accent-muted: hsl(194, 100%, 90%);
-  --clr-background: #ffffff;
-  --clr-about: hsl(0, 0%, 85%);
-  --github-logo: url(/images/icons/github.svg);
-  --external-link: url(/images/icons/external-link.svg);
-  --hamburger: url(/images/icons/menu.svg);
-}
-[data-theme="dark"] {
+
   --clr-header: hsl(0, 0%, 85%);
   --clr-header-light: hsl(0, 0%, 74%);
   --clr-accent: hsl(194, 100%, 50%);
@@ -104,6 +94,17 @@ select {
   --github-logo: url(/images/icons/github-light.svg);
   --external-link: url(/images/icons/external-link-light.svg);
   --hamburger: url(/images/icons/menu-light.svg);
+}
+[data-theme="dark"] {
+  --clr-header: hsl(0, 0%, 15%);
+  --clr-header-light: hsl(0, 0%, 44%);
+  --clr-accent: hsl(194, 100%, 50%);
+  --clr-accent-muted: hsl(194, 100%, 90%);
+  --clr-background: #ffffff;
+  --clr-about: hsl(0, 0%, 85%);
+  --github-logo: url(/images/icons/github.svg);
+  --external-link: url(/images/icons/external-link.svg);
+  --hamburger: url(/images/icons/menu.svg);
 }
 html {
   scroll-behavior: smooth;
