@@ -77,13 +77,12 @@ select {
   }
 }
 
-*, html {
-
+*,
+html {
   scroll-behavior: smooth !important;
 }
 /* Body */
 :root {
-
   --clr-header: hsl(0, 0%, 85%);
   --clr-header-light: hsl(0, 0%, 74%);
   --clr-accent: hsl(194, 100%, 50%);
@@ -93,6 +92,8 @@ select {
 
   --github-logo: url(/images/icons/github-light.svg);
   --external-link: url(/images/icons/external-link-light.svg);
+  --twitter-logo: url(/images/icons/twitter.svg);
+  --linkedin-logo: url(/images/icons/linkedin.svg);
   --hamburger: url(/images/icons/menu-light.svg);
 }
 [data-theme="dark"] {
@@ -158,7 +159,16 @@ body {
   height: 21.42px;
   background: var(--hamburger) center / cover;
 }
-
+.linkedin-logo {
+  width: 50px;
+  height: 50px;
+  background: var(--linkedin-logo);
+}
+.twitter-logo {
+  width: 50px;
+  height: 50px;
+  background: var(--twitter-logo);
+}
 .nav-element {
   padding: 0 1rem;
 }
@@ -311,7 +321,7 @@ input:checked + .slider:before {
 
 /* nav desktop first */
 /* the mobile stuff */
-@media (max-width: 50em) {
+@media (max-width: 54em) {
   .mobile-nav-toggle {
     display: block;
     cursor: pointer;
@@ -388,8 +398,15 @@ input:checked + .slider:before {
   color: var(--clr-header-light);
 }
 .hero-tools {
+  width: 100%;
   margin-top: 2rem;
+  /* display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, 70px); */
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   align-items: center;
 
@@ -402,11 +419,20 @@ input:checked + .slider:before {
   align-items: center;
   transition: all ease 0.2s;
 }
+.hero-tool-image {
+  background: #262626;
+  border: 10px solid #262626;
+  border-radius: 10rem;
+}
+.nextjs {
+  border: 15px solid #262626;
+
+  /* width: 4.5rem; */
+}
 
 .hero-tool:hover {
   transform: translateY(-5px);
 }
-
 
 .hero-tool-name {
   margin-top: 1rem;
@@ -474,7 +500,6 @@ h2 {
   display: flex;
   margin-top: 1rem;
   gap: 0.5rem;
-
 }
 .project-icons img {
   width: 2.5rem;
@@ -498,7 +523,11 @@ h2 {
   cursor: pointer;
   background: var(--github-logo) center / cover;
 }
-
+.external-link-a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .external-link {
   width: 2.5rem;
   height: 2.5rem;
@@ -540,7 +569,7 @@ h2 {
 }
 
 /* Main Media Query */
-@media (min-width: 50em) {
+@media (min-width: 54em) {
   .hero .even-columns {
     grid-auto-columns: 1.5fr 1fr;
     grid-auto-flow: column;
@@ -576,9 +605,10 @@ h2 {
   .subtitle {
     font-size: 1.25rem;
   }
+
   .hero-tools {
     margin-top: 3rem;
-    gap: 1rem;
+    gap: 0.7rem;
   }
   .hero-tool {
     width: 5rem;
@@ -614,14 +644,15 @@ h2 {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
 
-    grid-auto-flow: row; */
+    grid-auto-flow: row;
+  }
 
-    /* align-items: start;
+  /* align-items: start;
     justify-items: start;
   }
 }
 /* Larger */
-/* @media (min-width: 72.5em) {
+  /* @media (min-width: 72.5em) {
   .title {
     font-size: clamp(4rem, 7vw, 5.2rem);
   }
@@ -639,3 +670,4 @@ h2 {
     font-size: 1.25rem;
   }
 } */
+}
