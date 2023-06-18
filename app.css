@@ -422,7 +422,7 @@ input:checked + .slider:before {
 .hero-tool-image {
   background: #262626;
   border: 10px solid #262626;
-  border-radius: 10rem;
+  border-radius: 100rem;
 }
 .nextjs {
   border: 15px solid #262626;
