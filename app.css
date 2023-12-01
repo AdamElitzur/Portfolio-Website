@@ -88,7 +88,7 @@ html {
   --clr-accent: hsl(194, 100%, 50%);
   --clr-accent-muted: hsl(194, 100%, 30%);
   --clr-background: hsl(200, 6%, 10%);
-  --clr-about: hsl(0, 0%, 35%);
+  --clr-about: #3a3b3c;
 
   --github-logo: url(/images/icons/github-light.svg);
   --external-link: url(/images/icons/external-link-light.svg);
@@ -102,7 +102,7 @@ html {
   --clr-accent: hsl(194, 100%, 50%);
   --clr-accent-muted: hsl(194, 100%, 90%);
   --clr-background: #ffffff;
-  --clr-about: hsl(0, 0%, 85%);
+  --clr-about: #dde3ec;
   --github-logo: url(/images/icons/github.svg);
   --external-link: url(/images/icons/external-link.svg);
   --hamburger: url(/images/icons/menu.svg);
@@ -621,6 +621,8 @@ h2 {
   }
   .project-photo {
     width: 40vw;
+    object-fit: cover;
+    object-position: top;
   }
   .project {
     width: 100%;
